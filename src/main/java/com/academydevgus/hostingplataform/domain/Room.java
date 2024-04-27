@@ -2,7 +2,6 @@ package com.academydevgus.hostingplataform.domain;
 
 import jakarta.persistence.*;
 import org.apache.commons.lang3.RandomStringUtils;
-
 import java.math.BigDecimal;
 import java.sql.Blob;
 import java.util.ArrayList;
@@ -78,6 +77,14 @@ public class Room {
     public void setBookedRoomList(List<BookedRoom> bookedRoomList) {
         this.bookedRoomList = bookedRoomList;
     }
+    public Blob getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Blob photo) {
+        this.photo = photo;
+    }
+
     public void addBookings(BookedRoom bookedRoom) {
         if (bookedRoomList == null) {
             bookedRoomList = new ArrayList<>();

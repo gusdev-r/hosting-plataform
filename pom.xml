@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.academydevgus</groupId>
-    <artifactId>hosting-plataform</artifactId>
+    <artifactId>hosting-platform</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hosting-plataform</name>
     <description>hosting-plataform</description>
@@ -90,6 +90,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
