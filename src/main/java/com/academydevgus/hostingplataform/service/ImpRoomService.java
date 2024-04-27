@@ -2,6 +2,7 @@ package com.academydevgus.hostingplataform.service;
 
 import com.academydevgus.hostingplataform.domain.Room;
 import com.academydevgus.hostingplataform.repository.RoomRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,16 +13,10 @@ import java.sql.Blob;
 import java.sql.SQLException;
 
 @Service
+@RequiredArgsConstructor
 public class ImpRoomService implements RoomService {
 
-    private RoomRepository roomRepository;
-
-    public ImpRoomService(RoomRepository roomRepository) {
-        this.roomRepository = roomRepository;
-    }
-
-    public ImpRoomService() {
-    }
+    private final RoomRepository roomRepository;
 
     @Override
     public Room addNewRoom(MultipartFile photoFile, String roomType,

@@ -3,6 +3,7 @@ package com.academydevgus.hostingplataform.controller;
 import com.academydevgus.hostingplataform.domain.Room;
 import com.academydevgus.hostingplataform.dto.response.RoomResponse;
 import com.academydevgus.hostingplataform.service.ImpRoomService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,16 +17,10 @@ import java.sql.SQLException;
 
 @RestController
 @RequestMapping(path = {"/v1/api/rooms", "/v1/api/rooms/"})
+@RequiredArgsConstructor
 public class RoomController {
 
-    private ImpRoomService impRoomService;
-
-    public RoomController(ImpRoomService impRoomService) {
-        this.impRoomService = impRoomService;
-    }
-
-    public RoomController() {
-    }
+    private final ImpRoomService impRoomService;
 
     @PostMapping("/add/new-room")
     public ResponseEntity<RoomResponse> addNewRoom(
