@@ -56,7 +56,7 @@ class RoomControllerUnitTest {
 
         BDDMockito.lenient().when(impRoomService.addNewRoom(photoFile, roomType, roomPrice))
                 .thenReturn(savedRoom);
-        ResponseEntity<RoomResponse> responseEntity = roomController.addNewRoom(null, null, null);
+        ResponseEntity<RoomResponse> responseEntity = roomController.addNewRoom(photoFile, roomType, roomPrice);
 
         var responseRoom = responseEntity.getBody();
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
